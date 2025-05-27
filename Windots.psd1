@@ -4,7 +4,7 @@
 	Description       = 'Windots: Lightweight dotfile-like config tool for Windows.'
 	PowerShellVersion = '5.1'
 	Author            = 'Edditoria'
-	FunctionsToExport = @('Add-BinPath')
+	FunctionsToExport = @('Add-BinPath', 'Install-Chocolatey')
 	CmdletsToExport   = @()
 	AliasesToExport   = @()
 }

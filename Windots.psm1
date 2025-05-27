@@ -23,4 +23,31 @@ function Add-BinPath {
 	return
 }
 
+<#
+	.SYNOPSIS
+	Install Chocolatey package manager.
+	.OUTPUTS
+	Null if success, or Chocolatey is already installed.
+	Throw exception if fail to install Chocolatey.
+#>
+function Install-Chocolatey {
+	if (Get-Command choco -ErrorAction SilentlyContinue) {
+		Write-Warning 'Skipped: Chocolatey is already installed.'
+		Write-Information 'Done.' -InformationAction Continue
+		return
+	}
+	try {
+		$url = 'https://community.chocolatey.org/install.ps1'
+		Set-ExecutionPolicy Bypass -Scope Process -Force
+		[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+		Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($url))
+	}
+	catch {
+		throw New-Object System.Exception("Failed to install Chocolatey: $_")
+	}
+	Write-Information 'Done.' -InformationAction Continue
+	return
+}
+
 Export-ModuleMember -Function Add-BinPath
+Export-ModuleMember -Function Install-Chocolatey
