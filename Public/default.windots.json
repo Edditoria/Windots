@@ -1,0 +1,44 @@
+{
+	"packages": [
+		{
+			"name": "ChocolateyGUI",
+			"manager": "choco",
+			"pin": false
+		},
+		{
+			"name": "7zip.install",
+			"manager": "choco",
+			"pin": false
+		},
+		{
+			"name": "mise",
+			"manager": "choco",
+			"pin": true
+		},
+		{
+			"name": "notepadplusplus.install",
+			"manager": "choco",
+			"pin": false
+		},
+		{
+			"name": "git.install",
+			"manager": "choco",
+			"pin": false
+		},
+		{
+			"name": "lazygit",
+			"manager": "choco",
+			"pin": false
+		},
+		{
+			"name": "vscode.install",
+			"manager": "choco",
+			"pin": true
+		},
+		{
+			"name": "meld",
+			"manager": "choco",
+			"pin": false
+		}
+	]
+}
